@@ -1,0 +1,39 @@
+version: "2.3"
+volumes:
+        flask_data:
+        mongo_data:
+        # uncomment if you want to use nginx
+        # nginx_config:
+        nginx_ssl:
+services:
+        # uncomment if you want to use nginx
+        # nginx:
+        #         image: nginx
+        #         ports:
+        #                 - "80:80"
+        #                 - "443:443"
+        #         volumes:
+        #                 - nginx_config:/etc/nginx
+        #         hostname: nginx
+        chopshop:
+                hostname: chopshop
+                build: ./chopshop
+                ports:
+                        - "4242:4242"
+        carracing:
+                hostname: carracing
+                build: ./carracing
+                runtime: runc
+                ports:
+                        - "5000:5000"
+                volumes: 
+                        - flask_data:/home/dev/scratch/cars/carracing_clean/flaskapp/static
+        mongo:
+                hostname: mongo
+                image: mongo:latest
+                # consider changing the port number
+                command: mongod --port 27017
+                ports:
+                        - "27017:27017"
+                volumes:
+                        - mongo_data:/data/db
