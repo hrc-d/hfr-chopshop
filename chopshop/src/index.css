@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #eee;
+  background: linear-gradient(#70706F 0%, #7D7D7A 20%, #8E8D8D 40%, #A1A2A3 60%, #B3B6B5 80%, #BEC0C2 100%);
+  background: linear-gradient(#BEC0C2 0%, #B3B6B5 20%, #8E8D8D 40%, #A1A2A3 60%,  #7D7D7A 80%,  #70706F 100%);
+  background: linear-gradient(#BEC0C2 0%, #B3B6B5 20%, #A1A2A3  50%, #BEC0C2 100%);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");

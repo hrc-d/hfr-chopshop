@@ -1,0 +1,36 @@
+{
+  "name": "chopshop",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.1.0",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@nivo/radar": "^0.36.0",
+    "@nivo/scatterplot": "^0.36.0",
+    "chart.js": "^2.7.2",
+    "material-ui-color": "^0.4.6",
+    "react": "^16.13.1",
+    "react-chartjs-2": "^2.7.2",
+    "react-dom": "^16.13.1",
+    "react-redux": "^5.1",
+    "react-responsive-carousel": "^3.1.38",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-socket.io": "^1.4.0",
+    "redux-thunk": "^2.2.0",
+    "slick-carousel": "^1.8.1",
+    "socket.io-client": "^2.1.1",
+    "styled-components": "^5.0.1",
+    "video-react": "^0.10.9"
+  },
+  "scripts": {
+    "start": "PORT=4242 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
