@@ -58,7 +58,9 @@ def session():
 
         videos = [s.replace(f'{app.config["FILE_PATH"]}/','') for s in glob.glob(f'{str(default_file_path)}/*.mp4')]
         print(f'GLOB: {str(default_file_path)}/*.h5')
-        agent = glob.glob(f'{str(default_file_path)}/*.h5')[0]
+        agents = glob.glob(f'{str(default_file_path)}/*.h5')
+        agents.sort(reverse=True)
+        agent = agents[0]
         configs = glob.glob(f'{str(default_file_path)}/*config.json')
         reward_plot_path = f'{app.config["DEFAULT_PATH"]}/reward_plot.png'
         configs.sort()

@@ -364,7 +364,10 @@ if __name__ == "__main__":
         trainer = DQNAgent(n_episodes, None, replay_freq=50, lr=0.001, train_dir="flaskapp/static/default")#, carConfig=car_config)
         trainer.train()
     elif args.videos:
-        agent = glob.glob('flaskapp/static/default/*.h5')[0]
+        agents = glob.glob('flaskapp/static/default/*.h5')
+        # get the most recent agent by timestamp
+        agents.sort(reverse=True)
+        agent = agents[0]
         tester = DQNAgent(0, agent, video_callable=lambda x: True)
         n_videos = int(args.videos)
         for i in range(n_videos):
