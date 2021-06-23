@@ -17,7 +17,7 @@ let CostBenefitPlot = ({testedCars,histCars,handleSelectCompCar,handleClearCompC
   let cars = [];
   let labels = [];
 
-  if(histCars.length>0){  
+  if(histCars && histCars.length>0){  
     cars.push({
       label: 'Reference Car Designs',
       data: histCars.map(((car,index)=>{
@@ -34,7 +34,7 @@ let CostBenefitPlot = ({testedCars,histCars,handleSelectCompCar,handleClearCompC
     labels.push('Reference Car Designs');
   }
 
-  if(testedCars.length>0){
+  if(testedCars && testedCars.length>0){
     cars.push({
       label: 'My Cars',
       data: testedCars.map(((car,index)=>{

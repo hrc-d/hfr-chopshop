@@ -17,7 +17,6 @@ import VideoModalContainer from './containers/VideoModalContainer';
 import { setWorkspaceWidth } from './actions/dimensions.js';
 class App extends Component {
 resize(props){
-	console.log("matt", this);
 	let docWidth = document.getElementById("workspace").clientWidth;
 	props.resize(docWidth);
 }
@@ -31,11 +30,7 @@ componentWillUnmount() {
 render() {
     return (
       <div className="App">
-		<VideoModalContainer>
-			
-			
-		</VideoModalContainer>
-
+		<VideoModalContainer />
 		<AppBar>
 			<Toolbar>
 				<Typography style={{"color":"white", "font-family": 'Racing Sans One', "margin":"auto"}} variant="h3">The ChopShop Garage</Typography>

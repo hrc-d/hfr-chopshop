@@ -32,7 +32,8 @@ const callGetSession = (userId, apiUrl)=>{
         .then(response => {
           let responseObj = response.json();
           let status = response.status
-          if (status !== '200'){
+          if (status !== 200){
+              console.log(responseObj);
               return {'error':response.status};
           }
           else{

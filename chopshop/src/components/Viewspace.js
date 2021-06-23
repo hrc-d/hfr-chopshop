@@ -49,7 +49,6 @@ class Viewspace extends React.Component {
     tabValue: 0,
   };
   handleChange = (event, value) => {
-    console.log("changing the tab",value);
     this.setState({"tabValue":value});
   };
   render () {
