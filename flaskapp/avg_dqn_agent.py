@@ -350,7 +350,7 @@ class DQNAgent():
             with open(os.path.join(os.getcwd(), "{}/{}/car_config.json".format(self.train_dir,self.timestamp)),'w+') as outfile:
                 json.dump(self.carConfig, outfile)
             self.model.save(os.path.join(os.getcwd(), "{}/{}.h5".format(self.train_dir,self.timestamp)))
-            copyfile(rap_name, "{}/rewards_plot.png".format(self.train_dir))
+            copyfile(rap_name, "{}/reward_plot.png".format(self.train_dir))
         self.env.close()
         return totalrewards
 
