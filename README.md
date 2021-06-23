@@ -45,10 +45,10 @@ If you don't have mongodb installed, I recommend using the docker image.
 The database name and connection details are defined and configurable in `flaskapp/config.py`.
 
 #### Train an agent
-`python flaskapp/avg_dqn_agent --train <n episodes to train>`
+`python flaskapp/avg_dqn_agent.py --train <n episodes to train>`
 
 #### Generate videos
-`python flaskapp/avg_dqn_agent --videos <n videos to generate>`
+`python flaskapp/avg_dqn_agent.py --videos <n videos to generate>`
 
 #### Start everything
 ##### Flask App
