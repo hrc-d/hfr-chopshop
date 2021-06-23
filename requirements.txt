@@ -17,7 +17,6 @@ google-auth==1.31.0
 google-auth-oauthlib==0.4.4
 google-pasta==0.2.0
 grpcio==1.34.1
--e git+https://github.com/openai/gym@ee5ee3a4a5b9d09219ff4c932a45c4a661778cd7#egg=gym&subdirectory=../../gym
 h5py==3.1.0
 idna==2.10
 itsdangerous==2.0.1
