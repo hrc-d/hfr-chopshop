@@ -14,18 +14,23 @@ Chopshop consists of:
 5. A mongodb backend to log session data, etc.
 
 ## Installing and Running Chopshop
-The recommended way to install and run chopshop is using our provided Docker-compose script:
-`docker-compose up --build` should do it.
 
-### If you want to develop/install from scratch
+Requires Python 3
+
 #### Install OpenAI Gym and Customize CarRacing
 Due to a number of recent improvements and bug fixes in CarRacing, we suggest you install the most recent version of Gym:
-`git submodule init gym
- cd gym
- pip install -e .`
+`git submodule init`
+`git submodule update`
+`cd gym`
+`git fetch`
+`git merge origin/master`
+`pip install -e .`
 
  Once gym is installed, copy over the customized CarRacing files in `misc/copy_to_gym`.
  The `__init__.py` file should overwrite `__init.py__` in `gym/gym/envs` and the files in `box2d` should be copied to `gym/gym/envs/box2d`.
+`cp misc/copy_to_gym/init gym/gym/envs`
+`cp misc/copy_to_gym/box2d/* gym/gym/envs/box2d`
+
 
 The modified files allow us to alter the car design in a CarRacing environment.
 
@@ -37,7 +42,7 @@ You need to have NodeJS installed; if you do, just go into the chopshop director
 Note that if you are running Windows, you need to use the windows_package.json.
 #### Install MongoDB
 If you don't have mongodb installed, I recommend using the docker image.
-The database name and connection details are defined in `flaskapp/config.py`.
+The database name and connection details are defined and configurable in `flaskapp/config.py`.
 
 #### Train an agent
 `python flaskapp/avg_dqn_agent --train <n episodes to train>`
