@@ -22,7 +22,7 @@ import cv2
 import datetime
 from collections import deque
 import glob
-
+from shutil import copyfile
 import pickle as pkl
 import json
 
@@ -343,12 +343,14 @@ class DQNAgent():
             plt.close()
             rap_name = os.path.join(os.getcwd(), "{}/{}/ra_plot.png".format(self.train_dir,self.timestamp))
             plot_running_avg(totalrewards, rap_name)
+
             # with open(os.path.join(os.getcwd(), "train_logs/avg_dqn_total_rewards_final_lr001_replay20_cpweights250.pkl"),'wb+') as outfile:
             with open(os.path.join(os.getcwd(), "{}/{}/total_rewards.pkl".format(self.train_dir,self.timestamp)),'wb+') as outfile:
                 pkl.dump(totalrewards, outfile)
             with open(os.path.join(os.getcwd(), "{}/{}/car_config.json".format(self.train_dir,self.timestamp)),'w+') as outfile:
                 json.dump(self.carConfig, outfile)
             self.model.save(os.path.join(os.getcwd(), "{}/{}.h5".format(self.train_dir,self.timestamp)))
+            copyfile(rap_name, "{}/rewards_plot.png".format(self.train_dir))
         self.env.close()
         return totalrewards
 
